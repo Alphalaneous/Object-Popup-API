@@ -1,0 +1,53 @@
+{
+	"geode": "4.3.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "alphalaneous.object_popup_api",
+	"name": "Object Popup API",
+	"version": "v1.0.0",
+	"developer": "Alphalaneous",
+	"description": "API for showing an object popup",
+	"resources": {
+		"sprites": [
+			"resources/*.png"
+		],
+		"files": [
+			"resources/objects.csv"
+		]
+	},
+	"settings": {
+		"tooltip-scale": {
+			"name": "Tooltip Scale",
+            "description": "Scale the tooltip size",
+            "type": "float",
+            "default": 1,
+			"min": 0.3,
+            "max": 3,
+            "control": {
+                "slider": true
+            }
+		},
+		"selection-color": {
+            "name": "Selection Color",
+            "type": "rgb",
+            "default": [255, 255, 0]
+        }
+	},
+	"links": {
+        "homepage": "https://linktr.ee/Alphalaneous",
+        "source": "https://github.com/Alphalaneous/Object-Popup-API",
+        "community": "https://discord.gg/Txn2CA5dHF"
+    },
+	"api": {
+        "include": [
+            "include/*.hpp"
+        ]
+    },
+	"tags": [
+		"editor", "developer"
+	]
+}
