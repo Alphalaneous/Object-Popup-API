@@ -66,7 +66,9 @@ private:
     void onObjectButtonHover(cocos2d::CCObject* sender, cocos2d::CCPoint point, bool hovering, bool isStart);
     void onObjectButton(cocos2d::CCObject* sender);
     void generateList(int tab, std::string query = "", bool reset = false);
+public:
     ~ObjectSelectPopup();
+protected:
     static ObjectSelectPopup* s_instance;
     static constexpr float s_scaleMult = 0.8f;
 

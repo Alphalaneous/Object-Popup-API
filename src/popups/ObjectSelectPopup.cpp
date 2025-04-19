@@ -447,6 +447,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
 
     handleTouchPriority(this);
 
+    #ifndef GEODE_IS_IOS
     queueInMainThread([this] {
         if (auto delegate = typeinfo_cast<CCTouchDelegate*>(m_scrollLayer)) {
             if (auto handler = CCTouchDispatcher::get()->findHandler(delegate)) {
@@ -454,6 +455,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
             }
         }
     });
+    #endif
 }
 
 void ObjectSelectPopup::onObjectButtonHover(CCObject* sender, CCPoint point, bool hovering, bool isStart) {
