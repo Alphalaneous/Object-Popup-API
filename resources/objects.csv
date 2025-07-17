@@ -6,6 +6,7 @@
 6,Grid Patterned Top Pillar Square
 7,Grid Patterned Pillar Square
 8,Black Gradient Spike
+9,Non-Colorable Spike Black Pit Hazard
 10,Blue Gravity Portal
 11,Yellow Gravity Portal
 12,Cube Portal
@@ -47,6 +48,7 @@
 58,Halve Enter Effect
 59,Inverse Halve Enter Effect
 60,Pulsing Music Note
+61,Non-Colorable Wavy Black Pit Hazard
 62,Wavy Black Slab
 63,Wavy Black Slab Outer Corner
 64,Wavy Black Slab Inner Corner
@@ -152,10 +154,13 @@
 186,Large Outline Blade
 187,Medium Outline Blade
 188,Small Outline Blade
-190,Tall Diamond Rod
+190,Tall Diamond
+191,Non-Colorable Fake Spike
 192,Single Metal Slab
 194,Metal Slab Inner Corner
 197,Three-Quarters Width Metal Slab
+198,Non-Colorable Half Fake Spike
+199,Non-Colorable Small Fake Spike
 200,Yellow Slow Speed Portal
 201,Blue Normal Speed Portal
 202,Green Fast Speed Portal
@@ -197,6 +202,8 @@
 240,Four-Sided Square Pipe
 241,One-Sided Square Pipe
 242,Outer Corner Angled Highlight
+243,Non-Colorable Wavy Black Pit Right Edge Hazard
+244,Non-Colorable Wavy Black Pit Left Edge Hazard
 245,Decorative Black Bricks
 246,Decorative Black Brick Edge
 255,Colored Beveled Square
@@ -220,7 +227,7 @@
 274,Colored Bricks Pillar Top
 275,Colored Bricks Pillar
 277,Decorative Colored Brick
-278,Decorative Colored Half-Brick 
+278,Decorative Colored Half-Brick
 279,Transparent Colored Square
 280,Transparent Colored Grid Patterned Square
 281,Transparent Colored Mechanical Square
@@ -245,6 +252,12 @@
 328,Metal Slab Slope Connector
 329,Metal Slab Wide Slope Connector
 358,Wide Striped Slope Connector 2
+363,Non-Colorable Spike Black Slope Hazard
+364,Non-Colorable Spike Black Wide Slope Hazard
+365,Non-Colorable Spike Black Hazard
+366,Non-Colorable Wavy Black Slope Hazard
+367,Non-Colorable Wavy Black Wide Slope Hazard
+368,Non-Colorable Wavy Black Hazard
 371,Black Gradient Slope
 372,Black Gradient Wide Slope
 373,Black Gradient Slope Corner
@@ -254,6 +267,7 @@
 377,Small Rotating Arm
 378,Very Small Rotating Arm
 392,Black Gradient Tiny Spike
+393,Non-Colorable Tiny Fake Spike
 394,Large Rotating Hexagon
 395,Medium Rotating Hexagon
 396,Small Rotating Hexagon
@@ -272,11 +286,15 @@
 414,Patch of Grass 4
 419,Water 1
 420,Water 2
+421,Non-Colorable Wide Spike Black Hazard
+422,Non-Colorable Wide Spike Black Edge Hazard
+446,Non-Colorable Round Black Hazard
+447,Non-Colorable Round Black Edge Hazard
 448,Rough Damage Block 1
 449,Rough Damage Block 2
-450,Big Equalizer 
-451,Small Equalizer 
-452,Tiny Equalizer 
+450,Big Equalizer
+451,Small Equalizer
+452,Tiny Equalizer
 453,Black Mechanical Connector Two Opposite Sides
 454,Black Mechanical Connector Two Adjacent Sides
 455,Black Mechanical Connector Three Sides
@@ -474,6 +492,9 @@
 662,Outline Slab
 663,Outline Slab Middle
 664,Outline Slab Side
+665,Non-Colorable Outline Slope
+666,Non-Colorable Outline Wide Slope
+667,Non-Colorable Square Black Hazard
 668,Grey Patterned Tile Edge
 669,Grey Patterned Tile Inner Corner
 670,Grey Patterned Tile Outer Corner
@@ -517,6 +538,7 @@
 715,Dark Grey Tile Slope
 716,Dark Grey Tile Wide Slope
 719,Square Pit Outline
+720,Non-Colorable Square Black Edge Hazard
 721,Square Pit Outline Corner
 722,Light Grey Tile
 723,Light Grey Tile Slab
@@ -525,10 +547,10 @@
 731,Light Grey Tile Wide Slope
 732,Black Tile Slope
 733,Black Tile Wide Slope
-734,Black Tile 
+734,Black Tile
 735,Black Tile Slab
 736,Small Black Tile
-738,Grey Patterned Tile 
+738,Grey Patterned Tile
 739,Colored Connected Pluses 2 Adjacent Sides
 740,Large Invisible Blade
 741,Medium Invisible Blade
@@ -549,6 +571,7 @@
 765,Grass Block Wide Slope Connector 1
 766,Grass Block Wide Slope Connector 2
 767,Jagged Highlight Half
+768,Non-Colorable Wide Spike Black Half Hazard
 769,Grass Platform Middle
 770,Grass Platform Side
 771,Grass Platform Slope
@@ -707,6 +730,7 @@
 987,Perpendicular Striped 3DL Wide Slope
 988,Perpendicular Striped 3DL Slope
 990,Square Pit Outline Inner Corner
+991,Non-Colorable Square Black Slope Corner Hazard
 992,Square Pit Outline Outer Corner
 997,Large Split Circle
 998,Medium Split Circle
@@ -2478,15 +2502,15 @@
 3032,Keyframe Point
 3033,Keyframe Animation Trigger
 3034,Full Spike Base
-3035,Four-Ninths Spike Base 
+3035,Four-Ninths Spike Base
 3036,One-Quarter Spike Base
 3037,One-Ninth Spike Base
 3038,Full Spike Half Filler
-3039,Four-Ninths Spike Half Filler 
+3039,Four-Ninths Spike Half Filler
 3040,One-Quarter Spike Half Filler
 3041,One-Ninth Spike Half Filler
 3042,Full Spike Gradient Filler
-3043,Four-Ninths Spike Gradient Filler 
+3043,Four-Ninths Spike Gradient Filler
 3044,One-Quarter Spike Gradient Filler
 3045,One-Ninth Spike Gradient Filler
 3046,Full Spike Gradient Outline
