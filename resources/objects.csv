@@ -28,9 +28,11 @@
 31,Start Position
 32,Enable Ghost Trail
 33,Disable Ghost Trail
+34,1.0 Level End Trigger
 35,Yellow Jump Pad
 36,Yellow Jump Orb
 39,Half Black Gradient Spike
+40,Black Gradient Single Slab
 41,Tall Chain
 45,Orange Mirror Portal
 46,Blue Mirror Portal
@@ -74,6 +76,8 @@
 85,Large Decorative Gear
 86,Medium Decorative Gear
 87,Small Decorative Gear
+88,Large Black Sawblade
+89,Medium Black Sawblade
 90,Black Square
 91,Black Top Square
 92,Black Outer Corner Square
@@ -82,6 +86,7 @@
 95,Black Top Pillar Square
 96,Black Pillar Square
 97,Very Small Decorative Gear
+98,Small Black Sawblade
 99,Green Size Portal
 101,Pink Size Portal
 103,Small Black Gradient Spike
@@ -135,6 +140,16 @@
 157,Wavy Decoration
 158,Wavy Decoration Left Edge
 159,Wavy Decoration Right Edge
+160,Solid Stripe Top Square
+161,Solid Stripe Top Square
+162,Solid Stripe Outer Corner Square
+163,Solid Inner Corner Square
+164,Old Stripe Top Square
+165,Solid Stripe Top Pillar Square
+166,Solid Stripe Pillar Square
+167,Solid Stripe Pillar/Top Square
+168,Solid Stripe Single Square
+169,Solid Stripe Checkered 1 Square
 170,Metal Slab Outer Corner
 171,Metal Slab End Short Connection
 172,Metal Slab End Full Connection
@@ -156,11 +171,18 @@
 188,Small Outline Blade
 190,Tall Diamond
 191,Non-Colorable Fake Spike
+190,Tall Diamond Rod
+191,Fake Black Spike
 192,Single Metal Slab
+193,Old Stripe Inner Square
 194,Metal Slab Inner Corner
+195,Black Gradient Small Square
+196,Black Gradient Small Slab
 197,Three-Quarters Width Metal Slab
 198,Non-Colorable Half Fake Spike
 199,Non-Colorable Small Fake Spike
+198,Fake Black Half Spike
+199,Fake Black Small Spike
 200,Yellow Slow Speed Portal
 201,Blue Normal Speed Portal
 202,Green Fast Speed Portal
@@ -206,6 +228,14 @@
 244,Non-Colorable Wavy Black Pit Left Edge Hazard
 245,Decorative Black Bricks
 246,Decorative Black Brick Edge
+247,Colored Grid Patterned Square
+248,Colored Grid Patterned Top Square
+249,Colored Grid Patterned Outer Corner Square
+250,Colored Grid Patterned Inner Corner Square
+251,Colored Grid Patterned Inner Square
+252,Colored Grid Patterned Top Pillar Square
+253,Colored Grid Patterned Pillar Square
+254,Colored Grid Patterned Two Adjacent Corners Square
 255,Colored Beveled Square
 256,Colored Beveled Top Square
 257,Colored Beveled Outer Corner Square
@@ -227,7 +257,6 @@
 274,Colored Bricks Pillar Top
 275,Colored Bricks Pillar
 277,Decorative Colored Brick
-278,Decorative Colored Half-Brick
 279,Transparent Colored Square
 280,Transparent Colored Grid Patterned Square
 281,Transparent Colored Mechanical Square
@@ -237,6 +266,8 @@
 285,Hexagon Pipe End
 286,Dual Portal
 287,Exit Dual Portal
+289,Cornerless Grid Patterned Slope
+291,Cornerless Grid Patterned Wide Slope
 294,Wavy Black Slope
 295,Wavy Black Wide Slope
 296,Wavy Black Slope Corner
@@ -258,6 +289,8 @@
 366,Non-Colorable Wavy Black Slope Hazard
 367,Non-Colorable Wavy Black Wide Slope Hazard
 368,Non-Colorable Wavy Black Hazard
+369,Black Gradient Slab Middle
+370,Black Gradient Slab Side
 371,Black Gradient Slope
 372,Black Gradient Wide Slope
 373,Black Gradient Slope Corner
@@ -268,9 +301,13 @@
 378,Very Small Rotating Arm
 392,Black Gradient Tiny Spike
 393,Non-Colorable Tiny Fake Spike
+393,Fake Black Tiny Spike
 394,Large Rotating Hexagon
 395,Medium Rotating Hexagon
 396,Small Rotating Hexagon
+397,Large Black Spike Blade
+398,Medium Black Spike Blade
+399,Small Black Spike Blade
 405,Pulsing Hexagon
 458,Colored Tiny Spike
 459,Invisible Tiny Spike
@@ -292,9 +329,6 @@
 447,Non-Colorable Round Black Edge Hazard
 448,Rough Damage Block 1
 449,Rough Damage Block 2
-450,Big Equalizer
-451,Small Equalizer
-452,Tiny Equalizer
 453,Black Mechanical Connector Two Opposite Sides
 454,Black Mechanical Connector Two Adjacent Sides
 455,Black Mechanical Connector Three Sides
@@ -551,6 +585,8 @@
 735,Black Tile Slab
 736,Small Black Tile
 738,Grey Patterned Tile
+737,Stripe Pillar/Outer Corner Square
+738,Grey Patterned Tile 
 739,Colored Connected Pluses 2 Adjacent Sides
 740,Large Invisible Blade
 741,Medium Invisible Blade
@@ -1529,6 +1565,7 @@
 1926,Tiny Four-Tone Pipe End Cap
 1927,One-Ninth Block Colored Square
 1928,Tiny Four-Tone Pipe Round Outer Corner
+1931,Old End Trigger
 1932,Player Control Trigger
 1933,Swing Portal
 1934,Song Trigger
@@ -2502,15 +2539,12 @@
 3032,Keyframe Point
 3033,Keyframe Animation Trigger
 3034,Full Spike Base
-3035,Four-Ninths Spike Base
 3036,One-Quarter Spike Base
 3037,One-Ninth Spike Base
 3038,Full Spike Half Filler
-3039,Four-Ninths Spike Half Filler
 3040,One-Quarter Spike Half Filler
 3041,One-Ninth Spike Half Filler
 3042,Full Spike Gradient Filler
-3043,Four-Ninths Spike Gradient Filler
 3044,One-Quarter Spike Gradient Filler
 3045,One-Ninth Spike Gradient Filler
 3046,Full Spike Gradient Outline
@@ -3117,6 +3151,7 @@
 3652,Comment Icon
 3653,Message Icon
 3654,Moon Icon
+3655,Object Control Trigger
 3656,Very Thin Triangle Particle
 3657,Thin Triangle Particle
 3658,Very Thin Gradient Triangle Particle
@@ -3239,8 +3274,6 @@
 3813,Energy Burst Particle
 3814,Snowflake Particle
 3815,Right Angle Particle
-3816,Icon Face Particle
-3817,Icon Particle
 3818,Cross Particle
 3819,Music Notes Particle
 3820,Electricity Particle
