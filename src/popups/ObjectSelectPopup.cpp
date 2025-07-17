@@ -8,6 +8,23 @@
 
 ObjectSelectPopup* ObjectSelectPopup::s_instance = nullptr;
 
+std::vector<std::string> split(const std::string& str, const std::string& delimiter, int limit = -1) {
+    std::vector<std::string> result;
+    size_t start = 0;
+    size_t end = str.find(delimiter);
+    int count = 0;
+
+    while (end != std::string::npos && (count < limit - 1 || limit == -1)) {
+        result.push_back(str.substr(start, end - start));
+        start = end + delimiter.length();
+        end = str.find(delimiter, start);
+        count++;
+    }
+
+    result.push_back(str.substr(start));
+    return result;
+}
+
 bool ObjectSelectPopup::init(EditorUI* editorUI, std::string title, bool multiSelect){
   
     m_editorUI = editorUI;
@@ -260,7 +277,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
     m_isDraggingScroll = false;
 
     for (auto& [k, v] : m_searchButtons) {
-        v->removeFromParentAndCleanup(false);
+        if (v) v->removeFromParentAndCleanup(false);
     }
 
     if (tab == m_tab && !reset) return;
@@ -287,28 +304,65 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
         m_searchBar->setVisible(true);
         if (!query.empty()) {
 
-		    std::vector<NameData> nameScores{};
-
-            for (auto& [k, v] : ObjectNames::get()->getNames()) {
-			    int score = 0;
-                if (!query.empty() && !fts::fuzzy_match(query.c_str(), v.c_str(), score)) continue;
-                std::string lowerV = utils::string::toLower(v);
-                std::string lowerQuery = utils::string::toLower(query);
-                //we still want the results to make some sense
-                if (utils::string::contains(lowerV, lowerQuery)) { 
-			        nameScores.push_back({k, v, score});
+            std::string lowerQuery = utils::string::toLower(query);
+            if (lowerQuery.starts_with("id:")) {
+                std::vector<std::string> parts = split(lowerQuery, ":");
+                if (parts.size() == 2) {
+                    Result<int> numRes = numFromString<int>(utils::string::trim(parts[1]));
+                    if (numRes.isOk()) {
+                        int ID = numRes.unwrap();
+                        if (m_searchButtons[ID]) {
+                            m_buttons.push_back(m_searchButtons[ID]);
+                        }
+                    }
                 }
             }
-
-            if (!nameScores.empty()) {
-                std::sort(nameScores.begin(), nameScores.end(), [&](const auto& a, const auto& b) {
-                    return a.score > b.score;
-                });
-
-                for (auto& [k, v] : fields->m_gameObjects) {
-                    for (const auto& nameData : nameScores) {
-                        if (k == nameData.id) {
+            else if (lowerQuery.starts_with("exact:")) {
+                std::vector<std::string> parts = split(lowerQuery, ":", 2);
+                if (parts.size() == 2) {
+                    for (auto& [k, v] : ObjectNames::get()->getNames()) {
+                        std::string lowerV = utils::string::toLower(v);
+                        if (lowerV == utils::string::trim(parts[1])) {
                             m_buttons.push_back(m_searchButtons[k]);
+                        }
+                    }
+                }
+            }
+            else if (lowerQuery.starts_with("contains:")) {
+                std::vector<std::string> parts = split(lowerQuery, ":", 2);
+                if (parts.size() == 2) {
+                    for (auto& [k, v] : ObjectNames::get()->getNames()) {
+                        std::string lowerV = utils::string::toLower(v);
+                        if (utils::string::contains(lowerV, utils::string::trim(parts[1]))) {
+                            m_buttons.push_back(m_searchButtons[k]);
+                        }
+                    }
+                }
+            }
+            else {
+                std::vector<NameData> nameScores{};
+
+                for (auto& [k, v] : ObjectNames::get()->getNames()) {
+                    int score = 0;
+                    if (!query.empty() && !fts::fuzzy_match(query.c_str(), v.c_str(), score)) continue;
+                    std::string lowerV = utils::string::toLower(v);
+                    //we still want the results to make some sense
+                    if (utils::string::contains(lowerV, lowerQuery)) { 
+                        nameScores.push_back({k, v, score});
+                    }
+                }
+                
+
+                if (!nameScores.empty()) {
+                    std::sort(nameScores.begin(), nameScores.end(), [&](const auto& a, const auto& b) {
+                        return a.score > b.score;
+                    });
+
+                    for (auto& [k, v] : fields->m_gameObjects) {
+                        for (const auto& nameData : nameScores) {
+                            if (k == nameData.id) {
+                                m_buttons.push_back(m_searchButtons[k]);
+                            }
                         }
                     }
                 }
