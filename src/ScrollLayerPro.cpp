@@ -18,6 +18,7 @@ void ScrollLayerPro::addRows(std::vector<CCNode*> nodes, float rowHeight, int vi
 
 void ScrollLayerPro::setButtonsEnabled(bool on){
     for (CCMenuItem* btn : m_buttons) {
+        if (!btn) continue;
         btn->setEnabled(on);
         btn->stopAllActions();
         btn->unselected();

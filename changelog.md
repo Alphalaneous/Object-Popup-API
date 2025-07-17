@@ -1,3 +1,6 @@
+# 1.0.5
+- Fix a crash
+
 # 1.0.4
 - Search by Object ID 
  - type `id: 1234` to search by ID

@@ -323,7 +323,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
                     for (auto& [k, v] : ObjectNames::get()->getNames()) {
                         std::string lowerV = utils::string::toLower(v);
                         if (lowerV == utils::string::trim(parts[1])) {
-                            m_buttons.push_back(m_searchButtons[k]);
+                            if (m_searchButtons[k]) m_buttons.push_back(m_searchButtons[k]);
                         }
                     }
                 }
@@ -334,7 +334,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
                     for (auto& [k, v] : ObjectNames::get()->getNames()) {
                         std::string lowerV = utils::string::toLower(v);
                         if (utils::string::contains(lowerV, utils::string::trim(parts[1]))) {
-                            m_buttons.push_back(m_searchButtons[k]);
+                            if (m_searchButtons[k]) m_buttons.push_back(m_searchButtons[k]);
                         }
                     }
                 }
@@ -361,7 +361,7 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
                     for (auto& [k, v] : fields->m_gameObjects) {
                         for (const auto& nameData : nameScores) {
                             if (k == nameData.id) {
-                                m_buttons.push_back(m_searchButtons[k]);
+                                if (m_searchButtons[k]) m_buttons.push_back(m_searchButtons[k]);
                             }
                         }
                     }
@@ -434,6 +434,9 @@ void ObjectSelectPopup::generateList(int tab, std::string query, bool reset){
         float posX = 0;
         for (int j = 0; j < itemsPerRow; j++) {
             int pos = i * itemsPerRow + j;
+            if (!m_buttons[pos]) {
+                continue;
+            } 
             if (pos >= m_buttons.size()) {
                 shouldBreak = true;
                 break;
@@ -559,6 +562,7 @@ void ObjectSelectPopup::selectObject(int id, bool doCallback) {
         m_selectedIDs.clear();
         m_selectedIDs.insert(id);
         for (CCMenuItem* btn : m_buttons) {
+            if (!btn) continue;
             CCSprite* overlay = static_cast<CCSprite*>(btn->getChildByID("slot-overlay"));
             overlay->setVisible(btn->getTag() == id);
             if (doCallback) m_selectCallback(btn, id, btn->getTag() == id);
@@ -567,6 +571,7 @@ void ObjectSelectPopup::selectObject(int id, bool doCallback) {
     else {
         m_selectedIDs.insert(id);
         for (CCMenuItem* btn : m_buttons) {
+            if (!btn) continue;
             CCSprite* overlay = static_cast<CCSprite*>(btn->getChildByID("slot-overlay"));
             if (id == btn->getTag()) {
                 overlay->setVisible(true);
@@ -593,6 +598,7 @@ void ObjectSelectPopup::onObjectButton(CCObject* sender) {
     if (!m_multiSelect) {
         m_selectedIDs.clear();
         for (CCMenuItem* btn : m_buttons) {
+            if (!btn) continue;
             CCSprite* overlay2 = static_cast<CCSprite*>(btn->getChildByID("slot-overlay"));
             overlay2->setVisible(false);
         }
@@ -678,6 +684,7 @@ void ObjectSelectPopup::setOverlayColor(ccColor3B color) {
     m_overrideColor = true;
     m_overlayColor = color;
     for (CCMenuItem* btn : m_buttons) {
+        if (!btn) continue;
         CCSprite* overlay = static_cast<CCSprite*>(btn->getChildByID("slot-overlay"));
         overlay->setColor(color);
     }

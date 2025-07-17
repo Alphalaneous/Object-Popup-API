@@ -8,7 +8,7 @@
 	},
 	"id": "alphalaneous.object_popup_api",
 	"name": "Object Popup API",
-	"version": "v1.0.4",
+	"version": "v1.0.5",
 	"developer": "Alphalaneous",
 	"description": "API for showing an object popup",
 	"resources": {
