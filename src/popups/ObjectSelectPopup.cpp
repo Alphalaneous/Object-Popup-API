@@ -94,6 +94,7 @@ bool ObjectSelectPopup::init(EditorUI* editorUI, std::string title, bool multiSe
     float scale = 0.70f;
 
     m_searchInput = geode::TextInput::create((m_searchBar->getContentWidth() - 50) / scale, "Search", "bigFont.fnt");
+    m_searchInput->setCommonFilter(CommonFilter::Any);
     m_searchInput->setTextAlign(TextInputAlign::Left);
     m_searchInput->setScale(scale);
     m_searchInput->setID("search-input");

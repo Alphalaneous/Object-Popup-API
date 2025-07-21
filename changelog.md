@@ -1,3 +1,6 @@
+# 1.0.6
+- Fix text input filter not allowing colons
+
 # 1.0.5
 - Fix a crash
 
