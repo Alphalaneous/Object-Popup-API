@@ -30,7 +30,7 @@ bool ObjectSelectPopup::init(EditorUI* editorUI, std::string title, bool multiSe
     m_editorUI = editorUI;
     m_multiSelect = multiSelect;
 
-    if (!Popup<>::initAnchored(300.f, 240.f, "geode.loader/GE_square02.png")) return false;
+    if (!Popup::init(300.f, 240.f, "geode.loader/GE_square02.png")) return false;
 
     m_backgroundSprite = CCSprite::create("rounded-slot.png"_spr);
     m_overlaySprite = CCSprite::create("rounded-slot-overlay.png"_spr);
@@ -693,10 +693,6 @@ void ObjectSelectPopup::setOverlayColor(ccColor3B color) {
 
 bool ObjectSelectPopup::isDraggingScroll() {
     return m_isDraggingScroll;
-}
-
-bool ObjectSelectPopup::setup() {
-    return true;
 }
 
 void ObjectSelectPopup::onClose(cocos2d::CCObject* sender){

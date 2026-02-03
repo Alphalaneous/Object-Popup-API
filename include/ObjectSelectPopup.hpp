@@ -20,11 +20,10 @@ struct OBJECT_POPUP_API_DLL NameData {
     int score;
 };
 
-class OBJECT_POPUP_API_DLL ObjectSelectPopup : public geode::Popup<> {
+class OBJECT_POPUP_API_DLL ObjectSelectPopup : public geode::Popup {
 
 protected:
     cocos2d::CCMenu* m_tabsMenu;
-    bool setup() override;
     bool init(EditorUI* editorUI, std::string title, bool multiSelect);
 private:
     EditorUI* m_editorUI;
