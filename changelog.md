@@ -1,3 +1,7 @@
+# 1.0.7-beta.2
+- Geode Alpha 2 support
+- Switch to geode::NineSlice
+
 # 1.0.7-beta.1
 - 2.2081 support
 

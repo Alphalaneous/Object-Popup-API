@@ -60,7 +60,7 @@ bool ObjectSelectPopup::init(EditorUI* editorUI, std::string title, bool multiSe
 
     m_tooltip = CCNode::create();
     m_tooltip->setID("tooltip");
-    m_tooltipBG = CCScale9Sprite::create("square02_001.png");
+    m_tooltipBG = geode::NineSlice::create("square02_001.png");
     m_tooltipBG->setOpacity(225);
     m_tooltipBG->setAnchorPoint({0, 0});
     m_tooltipBG->setZOrder(-11);

@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-alpha.1",
+	"geode": "5.0.0-alpha.2",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,7 +8,7 @@
 	},
 	"id": "alphalaneous.object_popup_api",
 	"name": "Object Popup API",
-	"version": "v1.0.7-beta.1",
+	"version": "v1.0.7-beta.2",
 	"developer": "Alphalaneous",
 	"description": "API for showing an object popup",
 	"resources": {

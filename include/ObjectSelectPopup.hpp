@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Geode/ui/NineSlice.hpp>
 #include <Geode/ui/ScrollLayer.hpp>
 #include <Geode/ui/TextInput.hpp>
 #include <Geode/utils/cocos.hpp>
@@ -29,7 +30,7 @@ private:
     EditorUI* m_editorUI;
     geode::ScrollLayer* m_scrollLayer;
     cocos2d::CCNode* m_tooltip;
-    cocos2d::extension::CCScale9Sprite* m_tooltipBG;
+    geode::NineSlice* m_tooltipBG;
     cocos2d::CCLabelBMFont* m_tooltipText;
     cocos2d::CCLabelBMFont* m_tooltipObjID;
     cocos2d::CCNode* m_searchBar;
