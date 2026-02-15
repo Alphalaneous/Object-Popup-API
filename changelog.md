@@ -1,3 +1,6 @@
+# 1.0.7-beta.3
+- Bump
+
 # 1.0.7-beta.2
 - Geode Alpha 2 support
 - Switch to geode::NineSlice
